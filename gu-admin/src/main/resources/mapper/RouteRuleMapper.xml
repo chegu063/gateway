@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.chegu.admin.mapper.RouteRuleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.chegu.admin.bean.RouteRule">
+        <id column="id" property="id" />
+        <result column="app_id" property="appId" />
+        <result column="version" property="version" />
+        <result column="name" property="name" />
+        <result column="match_object" property="matchObject" />
+        <result column="match_key" property="matchKey" />
+        <result column="match_method" property="matchMethod" />
+        <result column="match_rule" property="matchRule" />
+        <result column="priority" property="priority" />
+        <result column="enabled" property="enabled" />
+        <result column="created_time" property="createdTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, app_id, version, name, match_object, match_key, match_method, match_rule, priority, enabled, created_time
+    </sql>
+
+</mapper>

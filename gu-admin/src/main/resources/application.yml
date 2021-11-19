@@ -1,0 +1,20 @@
+server:
+  port: 9001
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.145.142:3306/gu-gate?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: root123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+code:
+  generate:
+    mysql-config:
+      tables:
+        - t_user
+        - t_route_rule
+      user: root
+      password: root123
+      database: 192.168.145.144:3306/gu_gate
+
+
+

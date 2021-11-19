@@ -1,0 +1,13 @@
+server:
+  port: 8989
+gu:
+  http:
+    admin-url: 127.0.0.1:9001
+    app-name: admin
+    port: 2200
+    version: 1.0.1
+    context-path: /root
+
+nacos:
+  discovery:
+    server-addr: 127.0.0.1:8848
