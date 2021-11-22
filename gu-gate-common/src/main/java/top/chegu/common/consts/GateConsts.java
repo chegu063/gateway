@@ -14,27 +14,12 @@
  * limitations under the License.
  */
 
-package top.chegu.common.utils;
-
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+package top.chegu.common.consts;
 
 /**
- * @author chegu
- * @date 2021/4/12  14:00
+ * @author baozhuangyu
+ * @date 2021/11/19  17:03
  */
-public class IpUtil {
-
-    private IpUtil() {
-    }
-
-    public static String getIp(){
-        InetAddress localHost = null;
-        try {
-            localHost = InetAddress.getLocalHost();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-        return localHost != null ? localHost.getHostAddress() : null;
-    }
+public class GateConsts {
+    public static final String PRE_HTTP_PROTOCAL = "http://";
 }
