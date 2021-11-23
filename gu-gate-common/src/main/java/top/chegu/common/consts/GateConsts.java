@@ -21,5 +21,6 @@ package top.chegu.common.consts;
  * @date 2021/11/19  17:03
  */
 public class GateConsts {
+    private GateConsts() {}
     public static final String PRE_HTTP_PROTOCAL = "http://";
 }

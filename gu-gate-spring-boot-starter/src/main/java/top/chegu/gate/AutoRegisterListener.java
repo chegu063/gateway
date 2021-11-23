@@ -51,7 +51,6 @@ public class AutoRegisterListener implements ApplicationListener<ContextRefreshe
     private NamingService namingService;
 
     public AutoRegisterListener(GuClientProperties properties) {
-        //校验properties
         if (!check(properties)) {
             throw new GuGateException("Client property cannot be null!");
         }
@@ -60,7 +59,6 @@ public class AutoRegisterListener implements ApplicationListener<ContextRefreshe
 
     @Override
     public void onApplicationEvent(@NotNull ContextRefreshedEvent event) {
-        //判断是否已经注册，未注册则设置注册状态
         if (Boolean.TRUE.equals(isRegister)) {
             return;
         } else {

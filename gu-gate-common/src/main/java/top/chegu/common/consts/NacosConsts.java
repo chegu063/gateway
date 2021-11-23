@@ -21,5 +21,7 @@ package top.chegu.common.consts;
  * @date 2021/4/12  14:19
  */
 public class NacosConsts {
+    private NacosConsts() {}
+
     public static final String APP_GROUP_NAME = "Gu_Gate" ;
 }

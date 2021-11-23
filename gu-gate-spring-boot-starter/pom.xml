@@ -32,26 +32,22 @@
     <name>gu-gate-spring-boot-starter</name>
 
     <properties>
-        <java.version>1.8</java.version>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <gu-gate-common.version>1.0-SNAPSHOT</gu-gate-common.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.3.6.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.boot</groupId>
             <artifactId>nacos-discovery-spring-boot-starter</artifactId>
-            <version>0.2.2</version>
         </dependency>
         <dependency>
             <groupId>top.chegu</groupId>
             <artifactId>gu-gate-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${gu-gate-common.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.java-websocket</groupId>
@@ -62,13 +58,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
-            <version>2.3.6.RELEASE</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>2.3.6.RELEASE</version>
         </dependency>
     </dependencies>
 
