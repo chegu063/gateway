@@ -27,9 +27,9 @@ import top.chegu.common.entity.dto.UnRegisterAppDTO;
  * </p>
  *
  * @author chegu
- * @since 2021-04-13
+ * @since 2021-11-24
  */
-public interface AppService extends IService<App> {
+public interface IAppService extends IService<App> {
 
     void register(RegisterAppDTO dto);
 

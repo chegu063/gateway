@@ -100,7 +100,7 @@ public class AdminGenerator {
 
         //全局配置
         GlobalConfig globalConfig = new GlobalConfig.Builder()
-                .fileOverride()
+                .disableOpenDir()
                 .enableSwagger()
                 .author("chegu")
                 .outputDir(MODULE_URL + "/src/main")
