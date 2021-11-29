@@ -16,11 +16,13 @@
 
 package top.chegu.admin.controller;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.chegu.mybatis.generate.CodeGenerator;
-
-import javax.annotation.Resource;
+import top.chegu.admin.service.IAppInstanceService;
+import top.chegu.admin.service.IAppService;
+import top.chegu.common.entity.dto.RegisterAppDTO;
 
 /**
  * <p>
@@ -31,13 +33,17 @@ import javax.annotation.Resource;
  * @since 2021-04-13
  */
 @RestController
-@RequestMapping("/app")
+@RequestMapping("/app/")
+@RequiredArgsConstructor
 public class AppController {
 
-    @Resource
-    public CodeGenerator codeGenerator;
+    private final IAppService appService;
+    private final IAppInstanceService appInstanceService;
 
-    public void generate(){
-        codeGenerator.generate();
+    @PostMapping("register")
+    public void register(RegisterAppDTO registerAppDTO){
+        appService.register(registerAppDTO);
     }
+
+
 }

@@ -31,7 +31,7 @@ import top.chegu.common.entity.dto.UnRegisterAppDTO;
  */
 public interface IAppService extends IService<App> {
 
-    void register(RegisterAppDTO dto);
+    Integer register(RegisterAppDTO dto);
 
     void unRegister(UnRegisterAppDTO dto);
 }

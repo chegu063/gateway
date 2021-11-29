@@ -16,6 +16,7 @@
 
 package top.chegu.admin.service.impl;
 
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import top.chegu.admin.bean.App;
@@ -23,6 +24,8 @@ import top.chegu.admin.mapper.AppMapper;
 import top.chegu.admin.service.IAppService;
 import top.chegu.common.entity.dto.RegisterAppDTO;
 import top.chegu.common.entity.dto.UnRegisterAppDTO;
+
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -36,8 +39,24 @@ import top.chegu.common.entity.dto.UnRegisterAppDTO;
 public class AppServiceImpl extends ServiceImpl<AppMapper, App> implements IAppService {
 
     @Override
-    public void register(RegisterAppDTO dto) {
-
+    public Integer register(RegisterAppDTO dto) {
+        final App one = this.getOne(Wrappers.<App>lambdaQuery().eq(App::getAppName, dto.getAppName()));
+        if (one != null){
+            if (Boolean.FALSE.equals(one.getEnabled())){
+                one.setEnabled(true);
+                updateById(one);
+            }
+            return one.getId();
+        }else {
+            final App app = App.builder()
+                    .appName(dto.getAppName())
+                    .contextPath(dto.getContextPath())
+                    .enabled(true)
+                    .createdTime(LocalDateTime.now())
+                    .build();
+            save(app);
+            return app.getId();
+        }
     }
 
     @Override
